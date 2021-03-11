@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RealmApp3.Views.ListPage1"
+             xmlns:itemsVm="clr-namespace:RealmApp3.ViewModels">
+    <ContentPage.BindingContext>
+        <itemsVm:ItemViewModels/>
+    </ContentPage.BindingContext>
+    <ListView ItemsSource="{Binding ListOfItems}"
+              HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Padding="10">
+                       
+                        <Label Text="{Binding id}"/>
+                        <Label Text="{Binding name}"/>
+                        <Label Text="{Binding model}"/>
+                        <Label Text="{Binding serial}"/>
+                        <Label Text="{Binding manufactorer.name}"/>
+                        <Label Text="{Binding type.name}"/>
+                        <Label Text="{Binding param.name}"/>
+                        <Label Text="{Binding paramvalue.value}"/>
+                        
+
+
+                        <!--<Label Text="{Binding Manufactorer.name}"/>
+                        <Label Text="{Binding ItemType.type}"/>
+                        <Label Text="{Binding Param.name}"/>
+                        <Label Text="{Binding ParamValue.value}"/>-->
+                        <!--<Label Text="{Binding values}"/>-->
+
+
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

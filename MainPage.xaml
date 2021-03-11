@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RealmApp3.MainPage"
+    xmlns:itemsVm="clr-namespace:RealmApp3.ViewModels">
+    <ContentPage.BindingContext>
+        <itemsVm:ItemViewModels/>
+    </ContentPage.BindingContext>
+    <StackLayout Padding="50">
+        <Entry
+            Placeholder="name"
+            Text="{Binding ItemObject.name, Mode=TwoWay}"/>
+        <Entry
+            Placeholder="model"
+            Text="{Binding ItemObject.model, Mode=TwoWay}"/>
+        <Entry
+            Placeholder="serial"
+            Text="{Binding ItemObject.serial, Mode=TwoWay}"/>
+        <Entry
+            Placeholder="manufactorer"
+            Text="{Binding Manufactorer.name, Mode=TwoWay}"/>
+        <Entry
+            Placeholder="type"
+            Text="{Binding ItemType.name, Mode=TwoWay}"/>
+        <Entry
+            Placeholder="CPU"
+            Text="{Binding Param.name, Mode=TwoWay}"/>
+        <Entry
+            Placeholder=".ghz"
+            Text="{Binding ParamValue.value, Mode=TwoWay}"/>
+        <!--<Entry
+            Placeholder="param"
+            Text="{Binding ParamValue.value, Mode=TwoWay}"/>
+        <Entry
+            Placeholder="model"
+            Text="{Binding ItemObject.value, Mode=TwoWay}"/>
+        <Entry
+            Placeholder="model"
+            Text="{Binding ItemObject.manufactorer, Mode=TwoWay}"/>-->
+        
+        <Button Text="ADD"
+                FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="LightBlue"
+                    Command="{Binding CreateCommand}"
+                CornerRadius="20"/>
+        <Button Text="Go to list"
+                FontAttributes="Bold"
+                    TextColor="Black"
+                    BackgroundColor="LightBlue"
+                    Command="{Binding NavToListCommand}"
+                CornerRadius="20"/>
+    </StackLayout>
+
+</ContentPage>
